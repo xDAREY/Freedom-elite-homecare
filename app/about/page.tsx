@@ -83,7 +83,7 @@ export default function AboutPage() {
           <div className="plain-list checklist">
             {standards.map((s) => <div key={s}><span aria-hidden="true">✓</span>{s}</div>)}
           </div>
-          <p className="note-line">[Confirm screening and training details with owner] · License # [add here]</p>
+          {/* <p className="note-line">[Confirm screening and training details with owner] · License # [add here]</p> */}
         </section>
 
         <section className="mint-band">
