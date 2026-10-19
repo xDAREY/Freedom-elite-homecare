@@ -54,7 +54,7 @@ export default function AboutPage() {
             <p>Every family we serve gets the same promise from me: we will listen first, explain things plainly, and send caregivers who treat your home and your loved one with respect.</p>
             <blockquote>“Great care begins with listening.”</blockquote>
             <p className="sign">Asia Jenkins</p>
-            <p className="note-line">[Draft copy. Replace with Asia’s own words and story]</p>
+            {/* <p className="note-line">[Draft copy. Replace with Asia’s own words and story]</p> */}
             <div className="button-row">
               <Link className="button primary" href="/contact">Talk to Asia’s team</Link>
               <a className="button secondary" href="tel:4707369530">Call 470-736-9530</a>
@@ -62,12 +62,12 @@ export default function AboutPage() {
           </div>
         </section>
 
-        <section className="section-pad guide-section">
+        {/* <section className="section-pad guide-section">
           <h2>Get to know me</h2>
           <div className="detail-cards">
             {getToKnow.map(([t, d]) => <div className="detail-card" key={t}><h3>{t}</h3><p>{d}</p></div>)}
           </div>
-        </section>
+        </section> */}
 
         <section className="mint-band">
           <div>
