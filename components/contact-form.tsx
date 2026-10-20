@@ -29,7 +29,7 @@ export function ContactForm() {
     return (
       <div className="form-card">
         <h2>Thank you.</h2>
-        <p>We received your request and will reach out soon. [Confirm response time with owner]</p>
+        <p>We received your request and will reach out soon.</p>
         <a className="button primary" href="tel:4707369530">Call 470-736-9530</a>
       </div>
     )

@@ -69,7 +69,7 @@ export default async function ServiceDetail({ params }: { params: Promise<{ slug
             <div className="plain-list checklist">
               {['Background and reference checks', 'Training in respectful, person-centered care', 'Matched to your family by skills and personality', 'Supervised, with regular check-ins'].map((item) => <div key={item}><span aria-hidden="true">✓</span>{item}</div>)}
             </div>
-            <p className="note-line">[Confirm exact screening and training steps with owner]</p>
+            {/* <p className="note-line">[Confirm exact screening and training steps with owner]</p> */}
 
             <h2>How to get started</h2>
             <ol className="visit-steps">

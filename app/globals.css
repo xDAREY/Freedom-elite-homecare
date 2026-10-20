@@ -409,3 +409,54 @@ main { display: block; }
 
 @layer base { * { @apply border-border outline-ring/50; } }
 body { @apply bg-background text-foreground; }
+
+/* Larger text (works when font sizes use rem/em) */
+html.text-large {
+  font-size: 125%;
+}
+
+/* High contrast */
+html.contrast-high body {
+  background: #000;
+  color: #fff;
+}
+html.contrast-high a {
+  color: #ffe600;
+}
+html.contrast-high button,
+html.contrast-high .button {
+  border: 2px solid #fff;
+}
+
+/* Language dropdown */
+.language-select {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-size: 0.875rem;
+}
+.language-select select {
+  padding: 8px;
+  border-radius: 6px;
+  max-width: 240px;
+}
+
+/* Hide Google's default UI and stop it from shifting the page */
+.gt-hidden {
+  display: none;
+}
+body > .skiptranslate,
+.goog-te-banner-frame {
+  display: none !important;
+}
+body {
+  top: 0 !important;
+}
+#goog-gt-tt,
+.goog-tooltip {
+  display: none !important;
+}
+.goog-text-highlight {
+  background: none !important;
+  box-shadow: none !important;
+}

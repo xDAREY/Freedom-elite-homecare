@@ -78,7 +78,7 @@ export default function PrivacyPage() {
                 <li>To meet legal requirements.</li>
               </ul>
               <h3>Who we share it with</h3>
-              <p>We share website information only with service providers who help us run the site, forms, and email, and when the law requires it. We do not sell your personal information. [Confirm with owner]</p>
+              <p>We share website information only with service providers who help us run the site, forms, and email, and when the law requires it. We do not sell your personal information.</p>
               <h3>Please keep medical details off the forms</h3>
               <p>Website forms are for getting in touch. Please do not include detailed medical information. Call us at <a href="tel:4707369530">470-736-9530</a> and we will talk it through.</p>
               <h3>Children</h3>

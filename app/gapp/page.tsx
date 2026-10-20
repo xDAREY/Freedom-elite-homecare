@@ -10,7 +10,7 @@ export const metadata = {
 const steps = [
   ['Talk to your child’s doctor', 'Ask about in-home nursing or personal care. GAPP requires care that a physician has ordered as medically necessary.'],
   ['Make sure your child has Medicaid', 'GAPP services are for children who are Medicaid eligible. If family income is the barrier and your child is under 19, Katie Beckett may be the way in.'],
-  ['Choose a GAPP nursing agency', 'Requests go through a Medicaid-approved GAPP agency, which submits the prior authorization request for you. We can do this for your family. [Confirm with owner]'],
+  ['Choose a GAPP nursing agency', 'Requests go through a Medicaid-approved GAPP agency, which submits the prior authorization request for you. We can do this for your family.'],
   ['Wait for the decision', 'The state reviews the request. You will get a decision letter. If something is missing, we help you fix it quickly.'],
   ['Begin care and keep it going', 'Once approved, we build your care plan and start. Approvals are reviewed again over time, and we help with renewals.'],
 ]
@@ -27,11 +27,11 @@ const docs = [
 const faqs = [
   ['Is GAPP the same as Katie Beckett?', 'No. Katie Beckett helps a child qualify for Medicaid when parents’ income is too high. GAPP is a Medicaid program that provides in-home skilled nursing and personal care. Some families use both: Katie Beckett to establish Medicaid, then GAPP for care at home.'],
   ['Does my child need a specific diagnosis?', 'Eligibility depends on the level of care your child needs, not a single diagnosis. A doctor’s documentation of medical need is what matters.'],
-  ['Does GAPP cost families anything?', 'GAPP is a Medicaid program. Ask us about any costs that may apply to your situation. [Confirm with owner]'],
+  ['Does GAPP cost families anything?', 'GAPP is a Medicaid program. Ask us about any costs that may apply to your situation.'],
   ['Can we apply while a Medicaid application is pending?', 'GAPP services cannot be approved until Medicaid is in place, so Medicaid usually comes first. We can help you plan the timing.'],
   ['What if we are denied?', 'You can ask for a review. The denial letter explains how and by when, and deadlines are short, so contact us right away and we will help you understand the next step.'],
   ['What kind of care can my child receive?', 'GAPP can cover skilled nursing and personal care support at home, based on your child’s doctor’s orders and the care plan that is approved.'],
-  ['How long does approval take?', 'Timing varies with how complete the paperwork is and how quickly records arrive. We help you submit a complete package to avoid delays. [Confirm typical timing with owner]'],
+  ['How long does approval take?', 'Timing varies with how complete the paperwork is and how quickly records arrive. We help you submit a complete package to avoid delays.'],
 ]
 
 export default function GappPage() {

@@ -35,7 +35,7 @@ export default function ContactPage() {
             <div className="hours-card">
               <h2>Office hours</h2>
               <dl>{hours.map(([d, t]) => <div key={d}><dt>{d}</dt><dd>{t}</dd></div>)}</dl>
-              <p>After-hours support: [Confirm with owner]</p>
+              {/* <p>After-hours support: [Confirm with owner]</p> */}
             </div>
 
             <div className="next-card">

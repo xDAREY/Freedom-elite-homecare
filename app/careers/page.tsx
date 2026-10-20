@@ -19,10 +19,10 @@ const roles = [
 const skills = ['Tracheostomy care', 'Ventilator care', 'G-tube feeding', 'Seizure care', 'Autism or behavioral support', 'Dementia care', 'Hospice or end of life', 'Wound care']
 const shifts = ['Weekday days', 'Evenings', 'Overnights', 'Weekends']
 const perks = [
-  ['Flexible schedules', 'Choose shifts that fit your life. [Confirm with owner]'],
+  ['Flexible schedules', 'Choose shifts that fit your life.'],
   ['A supportive team', 'You are never on your own. Someone is always a call away.'],
   ['Meaningful work', 'You will see the difference you make for families every week.'],
-  ['Pay and benefits', 'Competitive pay and benefits. [Confirm details with owner]'],
+  ['Pay and benefits', 'Competitive pay and benefits.'],
 ]
 const nurse = (r: string) => r === 'RN' || r === 'LPN' || r === 'Pediatric Private Duty Nurse'
 
@@ -82,7 +82,7 @@ export default function CareersPage() {
           {sent ? (
             <div className="form-card career-form">
               <h2>Thank you for applying.</h2>
-              <p>We received your application and will be in touch soon. [Confirm response time with owner]</p>
+              <p>We received your application and will be in touch soon.</p>
               <Link className="button primary" href="/">Back to home</Link>
             </div>
           ) : (

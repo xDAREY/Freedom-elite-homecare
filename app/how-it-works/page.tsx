@@ -7,7 +7,7 @@ export const metadata = {
 }
 
 const journey = [
-  ['Reach out', 'Call, text, or send a request. We reply promptly and answer your first questions. [Confirm response time with owner]'],
+  ['Reach out', 'Call, text, or send a request. We reply promptly and answer your first questions.'],
   ['Free consultation', 'We listen to your family’s story, routines, and goals, with no pressure and no obligation.'],
   ['Eligibility and paperwork help', 'For GAPP and similar programs, we explain the steps and help you gather what is needed.'],
   ['Your care plan', 'We write a plan around your priorities and review it with you before anything starts.'],
@@ -30,8 +30,8 @@ const promises = [
 ]
 
 const faqs = [
-  ['How fast can care start?', 'It depends on your situation and any program approvals. We will give you an honest timeline during the consultation. [Confirm with owner]'],
-  ['Can we meet the caregiver first?', 'Yes. We introduce your caregiver before the first visit whenever possible. [Confirm with owner]'],
+  ['How fast can care start?', 'It depends on your situation and any program approvals. We will give you an honest timeline during the consultation.'],
+  ['Can we meet the caregiver first?', 'Yes. We introduce your caregiver before the first visit whenever possible.'],
   ['What if the match is not right?', 'Tell us. We will adjust and find a better fit.'],
   ['Is there a cost for the consultation?', 'No. The first conversation is free.'],
 ]

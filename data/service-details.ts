@@ -9,12 +9,12 @@ export const serviceDetails: Record<string, ServiceDetail> = {
     approach: [
       ['A care plan built with you', 'We start by listening to your family’s routines, your child’s needs, and your goals, then write a plan everyone can follow.'],
       ['Consistent caregivers', 'We aim to keep the same caregivers with your child so routines feel familiar and trust has time to grow.'],
-      ['Help with the GAPP process', 'We can explain the steps and paperwork involved and point you to the right next step. [Confirm exact services with owner]'],
+      ['Help with the GAPP process', 'We can explain the steps and paperwork involved and point you to the right next step.'],
     ],
     visit: ['The caregiver arrives and reviews notes from the last visit', 'Support with your child’s daily routines and personal care', 'Comfort and activities that fit your child’s day', 'Notes shared with the family before the visit ends'],
     faqs: [
       ['Does my child need to be approved for GAPP first?', 'Approval is handled through the state program. We can walk you through the steps and help you understand where your family is in the process.'],
-      ['Can I meet the caregiver before care starts?', 'Yes. We encourage introductions so you and your child feel comfortable. [Confirm with owner]'],
+      ['Can I meet the caregiver before care starts?', 'Yes. We encourage introductions so you and your child feel comfortable.'],
     ],
   },
   'behavioral-care-autism': {
@@ -25,7 +25,7 @@ export const serviceDetails: Record<string, ServiceDetail> = {
     ],
     visit: ['A warm greeting and a check-in on how your child is today', 'Support with routines, transitions, and daily activities', 'Patient encouragement using strategies your family prefers', 'A short summary for parents at the end of the visit'],
     faqs: [
-      ['Is this therapy?', 'Our caregivers provide in-home behavioral support. We explain exactly what is and is not included during your consultation. [Confirm service details with owner]'],
+      ['Is this therapy?', 'Our caregivers provide in-home behavioral support. We explain exactly what is and is not included during your consultation.'],
       ['Will you follow our existing routines?', 'Yes. We learn your routines and the strategies other providers use so your child gets consistent support.'],
     ],
   },
@@ -45,11 +45,11 @@ export const serviceDetails: Record<string, ServiceDetail> = {
     approach: [
       ['Respect for service', 'We take time to learn each veteran’s story, preferences, and the way they like to be supported.'],
       ['Dignity and choice', 'Care is built around the veteran’s routines and decisions.'],
-      ['Family guidance', 'We help families understand their options and the questions to ask. [Confirm what is offered]'],
+      ['Family guidance', 'We help families understand their options and the questions to ask.'],
     ],
     visit: ['A respectful greeting and a conversation about the day', 'Personal care and routine support', 'Errands, meals, or companionship as planned', 'Updates shared with the family'],
     faqs: [
-      ['Do you help with VA benefits?', 'We help families understand their options and point them toward the right resources. [Confirm what is offered with owner]'],
+      ['Do you help with VA benefits?', 'We help families understand their options and point them toward the right resources.'],
       ['Can family members be involved?', 'Yes. Family communication is part of every care plan.'],
     ],
   },
@@ -62,7 +62,7 @@ export const serviceDetails: Record<string, ServiceDetail> = {
     visit: ['The nurse reviews the care plan and recent notes', 'Skilled support provided according to the plan', 'Comfort, routines, and play that fit your child’s day', 'A summary shared with the family'],
     faqs: [
       ['What can nurses do in the home?', 'It depends on your child’s doctor’s orders and the care plan. We review these with you before care starts.'],
-      ['Do nurses work with my child’s doctor?', 'Our nurses follow the plan and orders provided and keep the family informed. [Confirm with owner]'],
+      ['Do nurses work with my child’s doctor?', 'Our nurses follow the plan and orders provided and keep the family informed.'],
     ],
   },
   'personal-care-services': {
@@ -73,7 +73,7 @@ export const serviceDetails: Record<string, ServiceDetail> = {
     ],
     visit: ['A check-in on how the person is feeling', 'Help with bathing, grooming, dressing, or toileting as needed', 'Support moving safely around the home', 'Notes for the family when the visit ends'],
     faqs: [
-      ['Can my loved one choose their caregiver?', 'We match caregivers by skills and personality and welcome feedback if a change would help. [Confirm with owner]'],
+      ['Can my loved one choose their caregiver?', 'We match caregivers by skills and personality and welcome feedback if a change would help.'],
       ['Is care available every day?', 'Scheduling is flexible and set during your consultation.'],
     ],
   },
@@ -98,7 +98,7 @@ export const serviceDetails: Record<string, ServiceDetail> = {
     visit: ['Review of preferences and any dietary notes', 'Meal preparation in your kitchen', 'Help with eating if needed, then kitchen clean-up', 'A note on what was eaten and what is running low'],
     faqs: [
       ['Can you follow a special diet?', 'We follow the directions the family or doctor provides. We do not set diets or give medical advice.'],
-      ['Do caregivers shop for groceries?', 'Errands can be added to the plan. [Confirm with owner]'],
+      ['Do caregivers shop for groceries?', 'Errands can be added to the plan.'],
     ],
   },
   'medication-reminders': {
@@ -109,7 +109,7 @@ export const serviceDetails: Record<string, ServiceDetail> = {
     ],
     visit: ['The caregiver checks the schedule shared by the family', 'A friendly reminder at the planned time', 'A note about whether the reminder was followed', 'A message to the family if something looks off'],
     faqs: [
-      ['Can caregivers give medication?', 'Our reminder service is limited to reminders. What caregivers can do beyond that depends on their role and your care plan. [Confirm with owner]'],
+      ['Can caregivers give medication?', 'Our reminder service is limited to reminders. What caregivers can do beyond that depends on their role and your care plan.'],
       ['What if a dose is missed?', 'We tell the family promptly so they can contact the doctor or pharmacist.'],
     ],
   },
@@ -121,7 +121,7 @@ export const serviceDetails: Record<string, ServiceDetail> = {
     ],
     visit: ['A check-in on how the person is feeling today', 'Help moving from bed, chair, or car', 'Walking and positioning support', 'A short report on anything the family should know'],
     faqs: [
-      ['Do caregivers use equipment?', 'They can work with equipment already in the home, such as walkers or transfer belts. [Confirm with owner]'],
+      ['Do caregivers use equipment?', 'They can work with equipment already in the home, such as walkers or transfer belts.'],
       ['Is this physical therapy?', 'No. Caregivers assist with daily movement. They do not replace a therapist.'],
     ],
   },
@@ -133,7 +133,7 @@ export const serviceDetails: Record<string, ServiceDetail> = {
     ],
     visit: ['A walkthrough of that day’s priorities', 'Light tidying, dishes, and laundry', 'Linen changes and trash', 'Notes about anything that needs attention'],
     faqs: [
-      ['Is this a full cleaning service?', 'It is light housekeeping to keep the home comfortable. Deep cleaning is not included. [Confirm with owner]'],
+      ['Is this a full cleaning service?', 'It is light housekeeping to keep the home comfortable. Deep cleaning is not included.'],
       ['Can this be combined with other services?', 'Yes. Many families pair it with personal care or meal preparation.'],
     ],
   },
@@ -145,8 +145,8 @@ export const serviceDetails: Record<string, ServiceDetail> = {
     ],
     visit: ['A hand-off conversation so the caregiver knows the plan', 'Support with routines and activities while you are away', 'Check-ins shared with you if you wish', 'A summary when you return'],
     faqs: [
-      ['How short can a respite visit be?', 'Schedules are flexible and set during your consultation. [Confirm minimum hours with owner]'],
-      ['Can we try it once before committing?', 'Talk to us about what makes sense for your family. [Confirm with owner]'],
+      ['How short can a respite visit be?', 'Schedules are flexible and set during your consultation.'],
+      ['Can we try it once before committing?', 'Talk to us about what makes sense for your family.'],
     ],
   },
   'dementia-memory-care': {
@@ -157,8 +157,8 @@ export const serviceDetails: Record<string, ServiceDetail> = {
     ],
     visit: ['A warm, familiar greeting', 'Support with meals, personal care, and routines', 'Gentle activities such as music, photos, or walks', 'Notes on mood and routine shared with the family'],
     faqs: [
-      ['Are caregivers trained in memory care?', 'Caregivers receive training in patient, respectful support. [Confirm specific dementia training with owner]'],
-      ['Can care happen overnight?', 'Ask us about availability. [Confirm with owner]'],
+      ['Are caregivers trained in memory care?', 'Caregivers receive training in patient, respectful support.'],
+      ['Can care happen overnight?', 'Ask us about availability.'],
     ],
   },
   'transportation-errands': {
@@ -169,7 +169,7 @@ export const serviceDetails: Record<string, ServiceDetail> = {
     ],
     visit: ['Plan the outing and the route together', 'Help getting ready and out the door', 'Support at the store, appointment, or event', 'Help getting home and a note to the family'],
     faqs: [
-      ['Do caregivers drive?', 'Transportation arrangements are confirmed during your consultation. [Confirm with owner]'],
+      ['Do caregivers drive?', 'Transportation arrangements are confirmed during your consultation.'],
       ['Can a caregiver stay during appointments?', 'Yes, with the family’s approval and the provider’s consent.'],
     ],
   },
