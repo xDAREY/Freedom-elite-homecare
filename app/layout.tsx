@@ -22,22 +22,16 @@ export const metadata: Metadata = {
   title: 'Freedom Elite Home Care | Georgia Home Care Agency',
   description: 'Warm, personalized home care for children, older adults, veterans, and families across Georgia.',
   icons: {
-    // icon: [
-    //   { url: '/icon-light-32x32.png', media: '(prefers-color-scheme: light)' },
-    //   { url: '/icon-dark-32x32.png', media: '(prefers-color-scheme: dark)' },
-    //   { url: '/icon.svg', type: 'image/svg+xml' },
-    // ],
+    icon: [{ url: '/icon.svg', type: 'image/svg+xml' }],
     apple: '/apple-icon.png',
   },
 }
 
 export const viewport: Viewport = {
-  colorScheme: 'light dark',
-  themeColor: [
-    { media: '(prefers-color-scheme: light)', color: 'white' },
-    { media: '(prefers-color-scheme: dark)', color: 'black' },
-  ],
+  colorScheme: 'light',
+  themeColor: '#1F4D3A',
 }
+
 
 export default function RootLayout({
   children,
