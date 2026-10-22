@@ -460,3 +460,16 @@ body {
   background: none !important;
   box-shadow: none !important;
 }
+
+.detail-image {
+  position: relative;
+  width: 100%;
+  height: clamp(220px, 34vw, 380px);
+  margin-bottom: 32px;
+  overflow: hidden;
+  border-radius: 20px 20px 20px 6px;
+  background: var(--mint);
+}
+.detail-image img {
+  object-fit: cover;
+}

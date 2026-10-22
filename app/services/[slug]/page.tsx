@@ -1,7 +1,9 @@
+import Image from 'next/image'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
 import { SiteHeader } from '@/components/site-header'
 import { getService, services } from '@/data/services'
+import { getServiceImage } from '@/data/service-images'
 import { serviceDetails } from '@/data/service-details'
 
 export function generateStaticParams() { return services.map((s) => ({ slug: s.slug })) }
@@ -38,6 +40,16 @@ export default async function ServiceDetail({ params }: { params: Promise<{ slug
 
         <section className="detail-content section-pad">
           <div>
+            <div className="detail-image">
+              <Image
+                src={getServiceImage(service, services)}
+                alt={`${service.title} in the home`}
+                fill
+                priority
+                sizes="(max-width: 900px) 100vw, 700px"
+              />
+            </div>
+
             <h2>Support that starts with <em>listening</em></h2>
             <p>{service.overview}</p>
 
@@ -104,6 +116,14 @@ export default async function ServiceDetail({ params }: { params: Promise<{ slug
           <div className="service-grid compact-grid">
             {related.map((item) => (
               <Link href={`/services/${item.slug}`} className="service-card compact" key={item.slug}>
+                <div className="service-card-image">
+                  <Image
+                    src={getServiceImage(item, services)}
+                    alt=""
+                    fill
+                    sizes="(max-width: 700px) 100vw, 33vw"
+                  />
+                </div>
                 <div className="service-card-copy">
                   <span className="service-category">{item.category}</span>
                   <h3>{item.title}</h3>

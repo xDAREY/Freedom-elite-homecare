@@ -125,18 +125,18 @@ export const serviceDetails: Record<string, ServiceDetail> = {
       ['Is this physical therapy?', 'No. Caregivers assist with daily movement. They do not replace a therapist.'],
     ],
   },
-  'light-housekeeping-home-safety': {
-    approach: [
-      ['A calmer home', 'Tidy, organized spaces are easier and safer to live in.'],
-      ['Simple safety habits', 'Clear walkways, tidy cords, and reachable items matter.'],
-      ['Done your way', 'We follow how the household likes things done.'],
-    ],
-    visit: ['A walkthrough of that day’s priorities', 'Light tidying, dishes, and laundry', 'Linen changes and trash', 'Notes about anything that needs attention'],
-    faqs: [
-      ['Is this a full cleaning service?', 'It is light housekeeping to keep the home comfortable. Deep cleaning is not included.'],
-      ['Can this be combined with other services?', 'Yes. Many families pair it with personal care or meal preparation.'],
-    ],
-  },
+  // 'light-housekeeping-home-safety': {
+  //   approach: [
+  //     ['A calmer home', 'Tidy, organized spaces are easier and safer to live in.'],
+  //     ['Simple safety habits', 'Clear walkways, tidy cords, and reachable items matter.'],
+  //     ['Done your way', 'We follow how the household likes things done.'],
+  //   ],
+  //   visit: ['A walkthrough of that day’s priorities', 'Light tidying, dishes, and laundry', 'Linen changes and trash', 'Notes about anything that needs attention'],
+  //   faqs: [
+  //     ['Is this a full cleaning service?', 'It is light housekeeping to keep the home comfortable. Deep cleaning is not included.'],
+  //     ['Can this be combined with other services?', 'Yes. Many families pair it with personal care or meal preparation.'],
+  //   ],
+  // },
   'respite-care-families': {
     approach: [
       ['A real break', 'You can rest, run errands, or simply recharge, knowing your loved one is supported.'],
@@ -161,16 +161,16 @@ export const serviceDetails: Record<string, ServiceDetail> = {
       ['Can care happen overnight?', 'Ask us about availability.'],
     ],
   },
-  'transportation-errands': {
-    approach: [
-      ['Out and about safely', 'Caregivers help with getting in and out of the car and the building.'],
-      ['Appointments made easier', 'Planning ahead means fewer stressful mornings.'],
-      ['Staying connected', 'Regular outings help people stay part of their community.'],
-    ],
-    visit: ['Plan the outing and the route together', 'Help getting ready and out the door', 'Support at the store, appointment, or event', 'Help getting home and a note to the family'],
-    faqs: [
-      ['Do caregivers drive?', 'Transportation arrangements are confirmed during your consultation.'],
-      ['Can a caregiver stay during appointments?', 'Yes, with the family’s approval and the provider’s consent.'],
-    ],
-  },
+  // 'transportation-errands': {
+  //   approach: [
+  //     ['Out and about safely', 'Caregivers help with getting in and out of the car and the building.'],
+  //     ['Appointments made easier', 'Planning ahead means fewer stressful mornings.'],
+  //     ['Staying connected', 'Regular outings help people stay part of their community.'],
+  //   ],
+  //   visit: ['Plan the outing and the route together', 'Help getting ready and out the door', 'Support at the store, appointment, or event', 'Help getting home and a note to the family'],
+  //   faqs: [
+  //     ['Do caregivers drive?', 'Transportation arrangements are confirmed during your consultation.'],
+  //     ['Can a caregiver stay during appointments?', 'Yes, with the family’s approval and the provider’s consent.'],
+  //   ],
+  // },
 }

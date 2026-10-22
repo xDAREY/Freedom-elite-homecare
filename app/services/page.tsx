@@ -5,9 +5,7 @@ import Link from 'next/link'
 import { useState } from 'react'
 import { SiteHeader } from '@/components/site-header'
 import { services, serviceCategories } from '@/data/services'
-
-const imageFor = (category: string) =>
-  category === 'Children' ? '/images/service-children.png' : category === 'Seniors' ? '/images/service-seniors.png' : '/images/service-family.png'
+import { getServiceImage } from '@/data/service-images'
 
 export default function ServicesPage() {
   const [category, setCategory] = useState<(typeof serviceCategories)[number]>('All')
@@ -34,7 +32,14 @@ export default function ServicesPage() {
           <div className="service-grid compact-grid">
             {filtered.map((service) => (
               <Link href={`/services/${service.slug}`} className="service-card compact" key={service.slug}>
-                <div className="service-card-image"><Image src={imageFor(service.category)} alt="" fill sizes="(max-width: 700px) 100vw, 33vw" /></div>
+                <div className="service-card-image">
+                  <Image
+                    src={getServiceImage(service, services)}
+                    alt=""
+                    fill
+                    sizes="(max-width: 700px) 100vw, 33vw"
+                  />
+                </div>
                 <div className="service-card-copy">
                   <span className="service-category">{service.category}</span>
                   <h2>{service.title}</h2>
