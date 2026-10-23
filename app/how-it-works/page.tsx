@@ -2,8 +2,9 @@ import Link from 'next/link'
 import { SiteHeader } from '@/components/site-header'
 
 export const metadata = {
-  title: 'How It Works | Freedom Elite Home Care',
-  description: 'See what happens from your first call to your first visit with Freedom Elite Home Care.',
+  title: 'How Home Care Works: Getting Started',
+  description: 'See what happens from your first call to your first visit: a free consultation, a personalized care plan, and a caregiver matched to your family.',
+  alternates: { canonical: '/how-it-works' },
 }
 
 const journey = [

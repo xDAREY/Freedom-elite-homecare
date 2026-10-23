@@ -3,8 +3,9 @@ import { SiteHeader } from '@/components/site-header'
 import { EligibilityChecker } from '@/components/eligibility-checker'
 
 export const metadata = {
-  title: 'GAPP and Katie Beckett Guide | Freedom Elite Home Care',
+  title: 'GAPP and Katie Beckett Guide for Georgia Families',
   description: 'A plain-language guide to the Georgia Pediatric Program (GAPP) and Katie Beckett Medicaid: who qualifies, how to apply, and what to expect.',
+  alternates: { canonical: '/gapp' },
 }
 
 const steps = [

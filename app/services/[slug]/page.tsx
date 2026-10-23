@@ -5,13 +5,19 @@ import { SiteHeader } from '@/components/site-header'
 import { getService, services } from '@/data/services'
 import { getServiceImage } from '@/data/service-images'
 import { serviceDetails } from '@/data/service-details'
+import { serviceJsonLd } from '@/lib/seo'
 
 export function generateStaticParams() { return services.map((s) => ({ slug: s.slug })) }
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params
   const service = getService(slug)
-  return { title: service ? `${service.title} | Freedom Elite Home Care` : 'Service | Freedom Elite Home Care', description: service?.shortDescription }
+  if (!service) return { title: 'Service' }
+  return {
+    title: `${service.title} in Georgia`,
+    description: `${service.shortDescription} Serving Stone Mountain and families across Georgia. Call 470-736-9530.`,
+    alternates: { canonical: `/services/${slug}` },
+  }
 }
 
 export default async function ServiceDetail({ params }: { params: Promise<{ slug: string }> }) {
@@ -24,6 +30,10 @@ export default async function ServiceDetail({ params }: { params: Promise<{ slug
   return (
     <div className="site-shell">
       <SiteHeader />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceJsonLd(service)) }}
+      />
       <main>
         <section className="page-hero">
           <div className="section-pad">

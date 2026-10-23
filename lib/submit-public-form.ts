@@ -1,3 +1,5 @@
+// lib/submit-public-form.ts  (in the MARKETING SITE repo)
+// .env.local:  NEXT_PUBLIC_SUPABASE_URL=...   NEXT_PUBLIC_SUPABASE_ANON_KEY=...
 import { createClient } from '@supabase/supabase-js'
 
 const URL = process.env.NEXT_PUBLIC_SUPABASE_URL!

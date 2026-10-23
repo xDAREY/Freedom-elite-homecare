@@ -2,8 +2,9 @@ import Link from 'next/link'
 import { SiteHeader } from '@/components/site-header'
 
 export const metadata = {
-  title: 'Privacy and HIPAA Notice | Freedom Elite Home Care',
+  title: 'Privacy and HIPAA Notice',
   description: 'How Freedom Elite Home Care collects, uses, and protects your information, and your rights under HIPAA.',
+  alternates: { canonical: '/privacy' },
 }
 
 const toc = [
@@ -143,7 +144,7 @@ export default function PrivacyPage() {
             {/* <div className="policy-contact">
               <h2>Contact our privacy officer</h2>
               <p><strong>[Privacy officer name: add before launch]</strong><br />Freedom Elite Home Care LLC<br />Stone Mountain, Georgia [add mailing address]</p>
-              <p><a href="tel:4707369530">470-736-9530</a><br /><a href="mailto:hello@freedomelitehomecare.com">hello@freedomelitehomecare.com</a></p>
+              <p><a href="tel:4707369530">470-736-9530</a><br /><a href="mailto:info@freedomelitehomecare.com">info@freedomelitehomecare.com</a></p>
               <Link className="button primary" href="/contact">Contact us</Link>
             </div> */}
           </div>

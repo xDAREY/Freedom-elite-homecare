@@ -5,6 +5,7 @@ import { SiteHeader } from '@/components/site-header'
 export const metadata = {
   title: 'About Asia and Freedom Elite Home Care',
   description: 'Meet Asia Jenkins, founder of Freedom Elite Home Care, and learn what guides our care for Georgia families.',
+  alternates: { canonical: '/about' },
 }
 
 const beliefs = [

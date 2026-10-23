@@ -3,12 +3,13 @@ import { SiteHeader } from '@/components/site-header'
 import { ContactForm } from '@/components/contact-form'
 
 export const metadata = {
-  title: 'Contact Us | Freedom Elite Home Care',
-  description: 'Call, text, or send a request to Freedom Elite Home Care in Stone Mountain, Georgia.',
+  title: 'Contact Us: Request Home Care in Georgia',
+  description: 'Call 470-736-9530 or send a request to Freedom Elite Home Care in Stone Mountain, Georgia. We listen first, then help you understand your next step.',
+  alternates: { canonical: '/contact' },
 }
 
 const hours = [
-  ['Monday to Friday', '8:00 AM to 5:00 PM'],
+  ['Monday to Friday', '9:00 AM to 5:00 PM'],
   ['Saturday', 'Closed'],
   ['Sunday', 'Closed'],
 ]
@@ -30,7 +31,7 @@ export default function ContactPage() {
           <div className="contact-side">
             <a className="reach" href="tel:4707369530"><small>Call</small><strong>470-736-9530</strong></a>
             <a className="reach" href="sms:4707369530"><small>Text</small><strong>470-736-9530</strong></a>
-            <a className="reach" href="mailto:hello@freedomelitehomecare.com"><small>Email</small><strong>hello@freedomelitehomecare.com</strong></a>
+            <a className="reach" href="mailto:info@freedomelitehomecare.com"><small>Email</small><strong>info@freedomelitehomecare.com</strong></a>
 
             <div className="hours-card">
               <h2>Office hours</h2>
@@ -53,13 +54,13 @@ export default function ContactPage() {
           </Suspense>
         </section>
 
-        <section className="section-pad map-band">
+        {/* <section className="section-pad map-band">
           <h2>Serving families across Georgia</h2>
           <p>Based in Stone Mountain. Tell us where you are and we will confirm service in your area.</p>
           <div className="map-frame">
             <iframe title="Freedom Elite Home Care service area map" src="https://www.google.com/maps?q=Stone%20Mountain%2C%20Georgia&output=embed" loading="lazy" />
           </div>
-        </section>
+        </section> */}
       </main>
     </div>
   )

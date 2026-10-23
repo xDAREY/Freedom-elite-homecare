@@ -1,13 +1,10 @@
-// import { InfoPage } from '@/components/info-page'
-
-// export default function Page() {
-//   return <InfoPage eyebrow="JOIN OUR TEAM" title="Build a career where you’re valued." intro="Nurses, CNAs, and caregivers: bring your skill, your heart, and your whole self to work that matters." sections={[{ title: 'Meaningful work. Supportive team.', body: 'We are building a team that values dependable care, thoughtful communication, and the people behind every shift.' }, { title: 'Open roles', body: 'Registered Nurse, Licensed Practical Nurse, Certified Nursing Assistant, Home Health Aide / Personal Care Aide, and Pediatric Private Duty Nurse. Pay and benefits [Confirm with owner].' }]}><form className="form-card career-form" action="mailto:hello@freedomelitehomecare.com" method="post" encType="text/plain"><p className="eyebrow">APPLICATION</p><h2>Tell us about yourself.</h2><label>Full name<input name="name" required /></label><label>Email<input name="email" type="email" required /></label><label>Phone number<input name="phone" type="tel" required /></label><label>Role you’re interested in<select name="role" defaultValue=""><option value="" disabled>Select a role</option><option>Registered Nurse</option><option>Licensed Practical Nurse</option><option>Certified Nursing Assistant</option><option>Home Health Aide / Personal Care Aide</option><option>Pediatric Private Duty Nurse</option></select></label><label>Experience and a little about you<textarea name="experience" rows={5} required /></label><label>Resume or application link<input name="resume" type="url" placeholder="https://" /></label><button className="button primary" type="submit">Submit application</button></form></InfoPage>
-// }
 'use client'
 
 import Link from 'next/link'
 import { useState } from 'react'
 import { SiteHeader } from '@/components/site-header'
+import { submitApplication } from '@/lib/submit-public-form'
+import { nameProps, phoneProps, placesProps, rangeProps } from '@/lib/input-filters'
 
 const roles = [
   { value: 'RN', title: 'Registered Nurse (RN)', text: 'Lead care plans and provide skilled nursing in the home.' },
@@ -29,6 +26,23 @@ const nurse = (r: string) => r === 'RN' || r === 'LPN' || r === 'Pediatric Priva
 export default function CareersPage() {
   const [role, setRole] = useState('')
   const [sent, setSent] = useState(false)
+  const [sending, setSending] = useState(false)
+  const [error, setError] = useState('')
+
+  async function onSubmit(e: React.FormEvent<HTMLFormElement>) {
+    e.preventDefault()
+    const form = e.currentTarget
+    setSending(true)
+    setError('')
+    try {
+      await submitApplication(form)
+      setSent(true)
+    } catch (err) {
+      setError(err instanceof Error ? err.message : 'Something went wrong. Please try again or call 470-736-9530.')
+    } finally {
+      setSending(false)
+    }
+  }
 
   const pick = (value: string) => {
     setRole(value)
@@ -86,18 +100,20 @@ export default function CareersPage() {
               <Link className="button primary" href="/">Back to home</Link>
             </div>
           ) : (
-            <form className="form-card career-form" onSubmit={(e) => { e.preventDefault(); setSent(true) }}>
+            <form className="form-card career-form" onSubmit={onSubmit}>
+              {/* Honeypot: hidden from people, bots fill it in. */}
+              <input name="website" tabIndex={-1} autoComplete="off" aria-hidden="true" style={{ position: 'absolute', left: '-9999px', width: 1, height: 1, opacity: 0 }} />
               <h2>Apply to join our team</h2>
               <p className="form-note">Takes about 10 minutes. Fields marked * are required.</p>
 
               <fieldset>
                 <legend>About you</legend>
                 <div className="field-grid">
-                  <label>First name *<input name="first" required /></label>
-                  <label>Last name *<input name="last" required /></label>
-                  <label>Phone *<input name="phone" type="tel" required /></label>
+                  <label>First name *<input name="first" required autoComplete="given-name" maxLength={60} {...nameProps} /></label>
+                  <label>Last name *<input name="last" required autoComplete="family-name" maxLength={60} {...nameProps} /></label>
+                  <label>Phone *<input name="phone" required {...phoneProps} /></label>
                   <label>Email *<input name="email" type="email" required /></label>
-                  <label>City *<input name="city" required /></label>
+                  <label>City *<input name="city" required autoComplete="address-level2" maxLength={80} {...nameProps} /></label>
                   <label>County or ZIP *<input name="county" required /></label>
                   <label>Legally authorized to work in the U.S.? *<select name="workAuth" defaultValue="" required><option value="" disabled>Select</option><option>Yes</option><option>No</option></select></label>
                   <label>Reliable transportation? *<select name="transport" defaultValue="" required><option value="" disabled>Select</option><option>Yes</option><option>No</option></select></label>
@@ -148,25 +164,26 @@ export default function CareersPage() {
                 </div>
                 <div className="field-grid">
                   <label>Employment type *<select name="type" defaultValue="" required><option value="" disabled>Select</option><option>Full time</option><option>Part time</option><option>PRN / as needed</option></select></label>
-                  <label>Hours per week you want<input name="hours" /></label>
+                  <label>Hours per week you want<input name="hours" inputMode="numeric" maxLength={7} {...rangeProps} placeholder="e.g. 20-30" /></label>
                   <label>Earliest start date<input name="start" type="date" /></label>
-                  <label>Counties you can travel to<input name="travel" /></label>
+                  <label>Counties you can travel to<input name="travel" maxLength={200} {...placesProps} /></label>
                 </div>
               </fieldset>
 
               <fieldset>
                 <legend>References and documents</legend>
                 <div className="field-grid">
-                  <label>Reference name<input name="refName" /></label>
-                  <label>Reference phone<input name="refPhone" type="tel" /></label>
+                  <label>Reference name<input name="refName" maxLength={80} {...nameProps} /></label>
+                  <label>Reference phone<input name="refPhone" {...phoneProps} autoComplete="off" /></label>
                   <label className="wide">Upload resume<input name="resume" type="file" accept=".pdf,.doc,.docx" /></label>
                   <label className="wide">How did you hear about us?<input name="source" /></label>
                 </div>
-                <label className="check consent"><input type="checkbox" required />I agree to a background check and credential verification if I move forward. *</label>
+                <label className="check consent"><input type="checkbox" name="consent" required />I agree to a background check and credential verification if I move forward. *</label>
                 <p className="form-note">Freedom Elite Home Care is an equal opportunity employer.</p>
               </fieldset>
 
-              <button className="button primary" type="submit">Submit application</button>
+              {error && <p className="form-error" role="alert">{error}</p>}
+              <button className="button primary" type="submit" disabled={sending}>{sending ? 'Sending...' : 'Submit application'}</button>
             </form>
           )}
         </section>

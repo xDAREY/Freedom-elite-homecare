@@ -4,6 +4,7 @@ import { useSearchParams } from 'next/navigation'
 import { useState, type FormEvent } from 'react'
 import { services } from '@/data/services'
 import { submitInquiry } from '@/lib/submit-public-form'
+import { nameProps, phoneProps, placesProps } from '@/lib/input-filters'
 
 export function ContactForm() {
   const params = useSearchParams()
@@ -42,9 +43,9 @@ export function ContactForm() {
       {/* Honeypot: hidden from people, bots fill it in. */}
       <input name="website" tabIndex={-1} autoComplete="off" aria-hidden="true" style={{ position: 'absolute', left: '-9999px', width: 1, height: 1, opacity: 0 }} />
       <div className="field-grid">
-        <label>Your name *<input name="name" required autoComplete="name" /></label>
-        <label>Phone *<input name="phone" type="tel" required autoComplete="tel" /></label>
-        <label className="wide">Email *<input name="email" type="email" required autoComplete="email" /></label>
+        <label>Your name *<input name="name" required autoComplete="name" maxLength={80} {...nameProps} /></label>
+        <label>Phone *<input name="phone" required {...phoneProps} /></label>
+        <label className="wide">Email *<input name="email" type="email" required autoComplete="email" maxLength={160} /></label>
         <label>Who needs care? *
           <select name="careFor" defaultValue="" required>
             <option value="" disabled>Select</option>
@@ -57,13 +58,13 @@ export function ContactForm() {
             {services.map((s) => <option key={s.slug} value={s.slug}>{s.title}</option>)}
           </select>
         </label>
-        <label>City or county<input name="location" /></label>
+        <label>City or county<input name="location" maxLength={80} {...placesProps} /></label>
         <label>Best time to call
           <select name="bestTime" defaultValue="">
             <option value="">Anytime</option><option>Morning</option><option>Afternoon</option><option>Evening</option>
           </select>
         </label>
-        <label className="wide">Tell us a little about what is going on<textarea name="message" rows={4} /></label>
+        <label className="wide">Tell us a little about what is going on<textarea name="message" rows={4} maxLength={2000} /></label>
       </div>
       <label className="check consent"><input type="checkbox" name="consent" required />I agree that Freedom Elite Home Care may contact me about this request. *</label>
       <p className="form-note">Please do not include detailed medical information here. We will talk it through by phone.</p>
