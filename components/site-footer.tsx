@@ -1,7 +1,7 @@
 'use client'
 
 import Link from 'next/link'
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { services } from '@/data/services'
 import { LANGUAGES } from '@/data/language'
 
@@ -39,18 +39,14 @@ function setTranslationCookie(code: string) {
 
 export function SiteFooter() {
   const [open, setOpen] = useState(false)
-  const [largeText, setLargeText] = useState(false)
-  const [highContrast, setHighContrast] = useState(false)
   const [language, setLanguage] = useState('en')
-  const [ready, setReady] = useState(false)
+  const boxRef = useRef<HTMLDivElement>(null)
 
   // Load saved preferences once
   useEffect(() => {
-    try {
-      const saved = JSON.parse(localStorage.getItem('a11y') || '{}')
-      if (saved.largeText) setLargeText(true)
-      if (saved.highContrast) setHighContrast(true)
-    } catch {}
+    // Larger text / high contrast were removed; clear anything saved earlier.
+    try { localStorage.removeItem('a11y') } catch {}
+    document.documentElement.classList.remove('text-large', 'contrast-high')
 
     const savedLanguage = getSavedLanguage()
     setLanguage(savedLanguage)
@@ -70,19 +66,17 @@ export function SiteFooter() {
       document.body.appendChild(script)
     }
 
-    setReady(true)
   }, [])
 
-  // Apply text size and contrast to the whole page, and save them
+  // Close the panel on Escape or a click outside it
   useEffect(() => {
-    if (!ready) return
-    const root = document.documentElement
-    root.classList.toggle('text-large', largeText)
-    root.classList.toggle('contrast-high', highContrast)
-    try {
-      localStorage.setItem('a11y', JSON.stringify({ largeText, highContrast }))
-    } catch {}
-  }, [largeText, highContrast, ready])
+    if (!open) return
+    const onKey = (e: KeyboardEvent) => e.key === 'Escape' && setOpen(false)
+    const onDown = (e: MouseEvent) => { if (boxRef.current && !boxRef.current.contains(e.target as Node)) setOpen(false) }
+    document.addEventListener('keydown', onKey)
+    document.addEventListener('mousedown', onDown)
+    return () => { document.removeEventListener('keydown', onKey); document.removeEventListener('mousedown', onDown) }
+  }, [open])
 
   function changeLanguage(code: string) {
     setLanguage(code)
@@ -92,28 +86,16 @@ export function SiteFooter() {
 
   return (
     <>
-      <div className={`accessibility-widget notranslate-labels${open ? ' is-open' : ''}`}>
-        <button
-          className="accessibility-toggle"
-          type="button"
-          onClick={() => setOpen((value) => !value)}
-          aria-expanded={open}
-          aria-controls="accessibility-menu"
-        >
-          Accessibility
-        </button>
-
-        <div className="accessibility-toolbar" id="accessibility-menu" hidden={!open}>
-          <button type="button" onClick={() => setLargeText((value) => !value)} aria-pressed={largeText}>
-            Larger text
-          </button>
-          <button type="button" onClick={() => setHighContrast((value) => !value)} aria-pressed={highContrast}>
-            High contrast
-          </button>
-
-          <label className="language-select">
-            <span>Language</span>
+      <div ref={boxRef} className="tools-widget">
+        {open && (
+          <div className="tools-panel" id="tools-menu" role="dialog" aria-label="Choose language">
+            <div className="tools-panel-head">
+              <strong>Language</strong>
+              <span>Read this site in your language</span>
+            </div>
             <select
+              autoFocus
+              aria-label="Language"
               translate="no"
               className="notranslate"
               value={language}
@@ -125,8 +107,24 @@ export function SiteFooter() {
                 </option>
               ))}
             </select>
-          </label>
-        </div>
+            <p className="tools-note">Translated automatically, so some wording may differ.</p>
+          </div>
+        )}
+
+        <button
+          className="tools-toggle"
+          type="button"
+          onClick={() => setOpen((value) => !value)}
+          aria-expanded={open}
+          aria-controls="tools-menu"
+          aria-label="Site tools: change language"
+          title="Language"
+        >
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+            <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z" />
+          </svg>
+          {language !== 'en' && <span className="tools-badge notranslate" translate="no">{language.slice(0, 2).toUpperCase()}</span>}
+        </button>
       </div>
 
       {/* Google Translate mounts here (kept hidden; we use our own dropdown) */}
@@ -166,7 +164,7 @@ export function SiteFooter() {
 
           <div className="footer-column footer-contact">
             <h2>Hours</h2>
-            <p>Monday to Friday<br />8:00 AM to 5:00 PM</p>
+            <p>Monday to Friday<br />9:00 AM to 5:00 PM</p>
             <p>Stone Mountain, Georgia</p>
             <Link href="/contact" className="button footer-button">Request care</Link>
           </div>
