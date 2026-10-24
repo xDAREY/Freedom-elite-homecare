@@ -144,7 +144,7 @@ export default function PrivacyPage() {
             {/* <div className="policy-contact">
               <h2>Contact our privacy officer</h2>
               <p><strong>[Privacy officer name: add before launch]</strong><br />Freedom Elite Home Care LLC<br />Stone Mountain, Georgia [add mailing address]</p>
-              <p><a href="tel:4707369530">470-736-9530</a><br /><a href="mailto:info@freedomelitehomecare.com">info@freedomelitehomecare.com</a></p>
+              <p><a href="tel:4707369530">470-736-9530</a><br /><a href="mailto:freedomelitehomecare@yahoo.com">freedomelitehomecare@yahoo.com</a></p>
               <Link className="button primary" href="/contact">Contact us</Link>
             </div> */}
           </div>

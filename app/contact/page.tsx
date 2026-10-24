@@ -31,7 +31,7 @@ export default function ContactPage() {
           <div className="contact-side">
             <a className="reach" href="tel:4707369530"><small>Call</small><strong>470-736-9530</strong></a>
             <a className="reach" href="sms:4707369530"><small>Text</small><strong>470-736-9530</strong></a>
-            <a className="reach" href="mailto:info@freedomelitehomecare.com"><small>Email</small><strong>info@freedomelitehomecare.com</strong></a>
+            <a className="reach" href="mailto:freedomelitehomecare@yahoo.com"><small>Email</small><strong>freedomelitehomecare@yahoo.com</strong></a>
 
             <div className="hours-card">
               <h2>Office hours</h2>

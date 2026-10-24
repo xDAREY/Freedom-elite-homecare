@@ -110,8 +110,7 @@ main { display: block; }
 .hero-image { min-height: 490px; position: relative; overflow: hidden; border-radius: 5px 90px 5px 90px; background: var(--mint); }
 .hero-image img { object-fit: cover; }
 .hero-media { position: relative; min-width: 0; }
-.hero-badge { position: absolute; left: -26px; bottom: 44px; z-index: 2; display: flex; align-items: center; gap: 12px; max-width: 280px; padding: 14px 18px 14px 14px; border: 2px solid var(--gold); border-radius: 18px 18px 18px 4px; background: var(--forest); color: #fff; box-shadow: var(--shadow); transform: rotate(-2deg); }
-.hero-badge svg { flex: none; width: 34px; height: 34px; padding: 6px; border-radius: 50%; background: var(--soft-gold); color: var(--forest); }
+.hero-badge { position: absolute; left: -26px; bottom: 44px; z-index: 2; display: flex; align-items: center; gap: 12px; max-width: 280px; padding: 14px 18px 14px 14px; border: 2px solid var(--gold); border-radius: 18px; background: var(--forest); color: #fff; box-shadow: var(--shadow); }.hero-badge svg { flex: none; width: 34px; height: 34px; padding: 6px; border-radius: 50%; background: var(--soft-gold); color: var(--forest); }
 .hero-badge strong { display: block; font: 800 18px/1.15 var(--font-serif-alt); }
 .hero-badge span { display: block; margin-top: 2px; color: #CFE3D6; font: 500 14px/1.3 var(--font-sans-alt); }
 

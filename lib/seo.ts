@@ -1,6 +1,6 @@
 export const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://freedomelitehomecare.com'
 export const SITE_NAME = 'Freedom Elite Home Care'
-export const SITE_EMAIL = 'info@freedomelitehomecare.com'
+export const SITE_EMAIL = 'freedomelitehomecare@yahoo.com'
 export const SITE_PHONE = '+1-470-736-9530'
 
 export const localBusinessJsonLd = {

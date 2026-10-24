@@ -139,7 +139,7 @@ export function SiteFooter() {
             </Link>
             <p>Thoughtful in-home support that helps Georgia families feel steady, informed, and cared for.</p>
             <a className="footer-phone" href="tel:4707369530">470-736-9530</a>
-            <a href="mailto:info@freedomelitehomecare.com">info@freedomelitehomecare.com</a>
+            <a href="mailto:freedomelitehomecare@yahoo.com">freedomelitehomecare@yahoo.com</a>
           </div>
 
           <div className="footer-column">
